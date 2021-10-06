@@ -107,7 +107,7 @@ hr.style-two {
 }
 
 #btn-Proceed{
-  background-color:#4AC9AD;
+  background-color:#323237;
   border: none;
   padding:0px; 
   margin-bottom: 30px;
@@ -133,18 +133,26 @@ p.label{
 
 
 i#icons{
-  margin-right: 89px;
+  margin-left: 50px;
   color: #91ADA8;
-  font-size: 14px;
+  font-size: 16px;
+  float: left;
+  padding: 0px 14px 0px 0px;
 }
 
+i#icons:hover{
+  color: #fff;
+  transition: all 0.2s ease;
+}
 
 div span#sideMenu{
-  font-size: 14px; 
+  font-size: 16px; 
   color: #91ADA8;
+  padding: 0px 0px 0px 22px;
+  font-family: 'Open Sans',sans-serif!important;
 }
 
-
-a#headings:hover{
+div span#sideMenu:hover{
   color: white;
+  transition: all 0.2s ease;
 }
