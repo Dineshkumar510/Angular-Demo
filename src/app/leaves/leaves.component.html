@@ -1,0 +1,287 @@
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <span style="cursor: default">Home</span>
+          </li>
+          <li class="breadcrumb-item active">
+            <span id="sheets" >Leaves</span>
+          </li>
+        </ol>
+      </div>
+
+
+
+
+      <div class="container">
+        <div class="main main-expand-lg main-light bg-light">
+          <div class="card card-default p-3 empty" style="padding-bottom:5px !important">
+            <div class = "row">
+              <div class = "col-md-8 bg-light">
+                <div class = "row">
+
+                    <div class = "col-md-4" style="background-color: #fff;">
+                        <div id="Day" class="form-group form-group-default input-group" 
+                        style="height: 85%">
+                            <div class="form-input-group">
+                                <div class="container">
+                                  <label id="Label">Start</label>
+                                  <input id="DateInput" placeholder="Start Date"
+                                  class="form-control" readonly
+                                  #dp="bsDatepicker"
+                                  bsDatepicker>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class = "col-md-4" style="background-color: #fff;">
+                        <div id="Days" class="form-group form-group-default input-group" 
+                        style=" height: 85%">
+                            <div class="form-input-group">
+                                <div class="container">
+                                  <label id="Label">End</label>
+                                  <input id="DateInput" placeholder="End Date"
+                                  class="form-control" readonly
+                                  #dp="bsDatepicker"
+                                  bsDatepicker>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="background-color: #fff;">
+                        <div id="DStatus"  class="form-group form-group-default" style="height: 85%">
+                            <div class="down form-group form-group-default form-group-default-select-2">
+                                <div>
+                                  <mat-form-field class="Status" appearance="fill">
+                                    <mat-label>Status</mat-label>
+                                    <mat-select [(value)]="selected">
+                                      <mat-option value="option1">All</mat-option>
+                                      <mat-option value="option2">Approved</mat-option>
+                                      <mat-option value="option3">Submitted</mat-option>
+                                      <mat-option value="option3">Rejected</mat-option>
+                                      <mat-option value="option3">Cancelled</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>
+
+
+                <div class="col-md-4" style="display:flex;  background:#fff">
+
+                  <div style="flex:1; background:#fff">
+                    <button class="btn btn-primary" style="height: 56px; min-width:100%; border-radius: 0; font-size: 15px; background: #33BBEC; border: #33BBEC">
+                      <i class="fa fa-search" style="color:white; background-color: #33BBEC"></i>
+                      Search
+                    </button>
+                  </div>
+
+                  <div style="flex:1; margin-right: 15px; background:#fff">
+                    <button (click)="openModalWithClass(template)" class="btn btn-primary ml-3" style="height: 56px; min-width:100%; border-radius: 0; font-size: 15px; background: #0d416b; border: #0d416b">
+                      <i class="fa fa-plus" style="color: white; background-color:#0d416b"></i>
+                      Request
+                    </button>
+                  </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+       </div>
+
+
+
+
+      <div class="container mt-3">
+        <div class="card card-default p-3"  style="border-radius: 0">
+            <div class="row">
+                <div class="col-lg-12 sm-no-padding">
+                    <div class="card card-default" style="border-radius: 0;">
+                         <div class="card-body" style="opacity: 1">
+                             <div class="row align-items-center justify-content-center" 
+                             style="height: 60vh">
+                                 <div class="col-md-12 text-center">
+                                     <div>
+                                         <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 110px; margin-bottom: 10px">
+                                     </div>
+                                     <p>
+                                         <i id="txt">Sorry, We weren't able to find any Leaves</i>
+                                     </p>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+    <ng-template #template>
+            <div class="modal-header">
+              <h2 class="modal-title pull-left">Add Leave Request</h2>
+              <button type="button" class="close btn-close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+
+                    <div id="DStatus" class="col-md-4" style="background-color: #fff;">
+                      <div id="options" class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+                                aria-controls="dropdown-basic">
+                          Leave Type <span class="caret"></span>
+                        </button>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button-basic">
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Full Day</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Half Day</a></li>
+                         
+                          
+                          
+                        </ul>
+                      </div>
+                  </div>
+          
+                  
+                  <div class = "col-md-4">
+                    <div id="Dayl" class="form-group form-group-default input-group" 
+                    style="height: 85%">
+                        <div class="form-input-group">
+                            <div class="container">
+                              <label id="Label">Start</label>
+                              <input id="DateInput" placeholder="Start Date"
+                              class="form-control" readonly
+                              #dp="bsDatepicker"
+                              bsDatepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+          
+                <div class = "col-md-4">
+                    <div id="Days" class="form-group form-group-default input-group" 
+                    style=" height: 85%">
+                        <div class="form-input-group">
+                            <div class="container">
+                              <label id="Label">End</label>
+                              <input id="DateInput" placeholder="End Date"
+                              class="form-control" readonly
+                              #dp="bsDatepicker"
+                              bsDatepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                  </div>
+          
+                  <div class="row">
+          
+                      <div class="col-md-4" style="background-color: #fff;">
+                        <div id="options" class="btn-group" dropdown>
+                          <button id="button-basic" dropdownToggle type="button" 
+                          class="btn dropdown-toggle"
+                          aria-controls="dropdown-basic">
+                          Include Weekend 
+                          <span class="caret"></span>
+                          <i class="fas fa-info" 
+                           popoverClass="my-custom-class" 
+                           ngbPopover="Include Weekends means that 
+                           you are working on weekends and you want
+                           to take leave " triggers="mouseenter:mouseleave"
+                          style="margin-right:10px;
+                          position: absolute;
+                          margin-top: 4px;
+                          color: #232527;
+                          z-index: 99;
+                          right: 8px;
+                          top: 8px;
+                          cursor: pointer;
+                          font: normal;" placement ="top"></i>
+                          </button>
+                          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                              role="menu" aria-labelledby="button-basic">
+                            <li id="option" role="menuitem"><a class="dropdown-item" href="">Yes</a></li>
+                            <li id="option" role="menuitem"><a class="dropdown-item" href="">No</a></li>
+                          </ul>
+                        </div>
+                    </div>
+          
+                    <div class="col-md-4" style="background-color: #fff;">
+                      <div id="options" class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" 
+                        class="btn dropdown-toggle" 
+                        aria-controls="dropdown-basic">
+                        Select Category 
+                        <span class="caret"></span>
+                        </button>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button-basic">
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Sick Day</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Family Care</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Govt Works</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Civic Duties</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Parental Leave</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Private Matters</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Birthday/Anniversary</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Religious Matter</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Community Events</a></li>
+                          <li id="option" role="menuitem"><a class="dropdown-item" href="">Others</a></li>
+                        </ul>
+                      </div>
+                  </div>
+
+                  </div>
+          
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                     <div class="textArea">
+                      <div class="form-group form-group-default" style="height: fit-content !important">
+                        <label style="font-size: 16px; margin-left: 15px; margin-top: 5px;">Reason</label>
+                        <textarea class="form-control" maxlength="500" rows="3" required
+                       type="text"></textarea>
+                      </div>
+                     </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-3">
+
+                    <div class="col-md-8 m-t-10 sm-t-10">
+                      <button class="float-left btn btn-success m-t-5" 
+                      style="background-color: #6DD3BD; 
+                      color: white; 
+                      cursor: default !important; 
+                      border-radius:0;
+                      border: 1px solid #6DD3BD" 
+                      type="button" disabled>
+                      Vacations available : 9
+                      </button>
+                    </div>
+
+                    <div class="col-md-4 m-t-10 sm-m-t-10">
+                      <div class="empty"></div>
+                      <button class="float-right btn btn-primary m-t-5"
+                      style=" border-radius:0;
+                      background-color: #5AC8EF;
+                      border: 1px solid #5AC8EF"
+                       type="button">Request</button>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+    </ng-template>

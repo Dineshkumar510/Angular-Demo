@@ -1,0 +1,211 @@
+
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <span style="cursor: default">Home</span>
+      </li>
+      <li class="breadcrumb-item active">
+        <span id="sheets">TimeSheets</span>
+      </li>
+    </ol>
+  </div>
+  
+
+     <div class="container">
+        <div class="main main-expand-lg main-light bg-light">
+          <div class="card card-default p-3 empty" style="padding-bottom:5px !important">
+            <div class = "row">
+              <div class = "col-md-8 bg-light">
+                <div class = "row">
+                  <div class = "col-md-3 col-sm-12" style="background-color: #fff">
+                    <div class="down form-group form-group-default form-group-default-select-2">
+                      <div ngbDropdown class="d-inline-block">
+                        <button style="border: 1px solid #B5B5B5" class="down btn btn-outline-primary" id="dropdownBasic1" 
+                        ngbDropdownToggle>Year</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button value="AllYear" ngbDropdownItem>All</button>
+                          <button value="2021" ngbDropdownItem>2021</button>
+                          <button value="2020" ngbDropdownItem>2020</button>
+                          <button value="2019" ngbDropdownItem>2019</button>
+                          <button value="2018" ngbDropdownItem>2018</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3" style="background-color: #fff">
+                <div class="down form-group form-group-default form-group-default-select-2">
+                    <div ngbDropdown class="d-inline-block">
+                      <button  style="border: 1px solid #B5B5B5" class="down btn btn-outline-primary" id="dropdownBasic1" 
+                      ngbDropdownToggle>Month</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button value="AllMonth" ngbDropdownItem>All</button>
+                        <button value="January" ngbDropdownItem>January</button>
+                        <button value="February" ngbDropdownItem>February</button>
+                        <button value="March"  ngbDropdownItem>March</button>
+                        <button value="April"  ngbDropdownItem>April</button>
+                        <button value="May"  ngbDropdownItem>May</button>
+                        <button value="June"  ngbDropdownItem>June</button>
+                        <button value="July"  ngbDropdownItem>July</button>
+                        <button value="August"  ngbDropdownItem>August</button>
+                        <button value="September"  ngbDropdownItem>September</button>
+                        <button value="October"  ngbDropdownItem>october</button>
+                        <button value="November"  ngbDropdownItem>November</button>
+                        <button value="December"  ngbDropdownItem>December</button>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-3" style="background-color: #fff">
+                <div  class="down form-group form-group-default form-group-default-select-2">
+                  <div ngbDropdown class="d-inline-block">
+                    <button disabled class="downn btn btn-outline-primary" id="dropdownBasic1"
+                     ngbDropdownToggle>Week</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem>Action - 1</button>
+                      <button ngbDropdownItem>Another Action</button>
+                      <button ngbDropdownItem>Something else is here</button>
+                    </div>
+                </div>
+              </div>
+                </div>
+                  <div class="col-md-3" style="background-color: #fff">
+                    <div class="down form-group form-group-default form-group-default-select-2">
+                      <div ngbDropdown class="d-inline-block">
+                        <button style="border: 1px solid #B5B5B5; " class="down btn btn-outline-primary" id="dropdownBasic1" 
+                        ngbDropdownToggle>Status</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button value="AllStatus" ngbDropdownItem>All</button>
+                          <button value="Approved" ngbDropdownItem>Approved</button>
+                          <button value="Submitted" ngbDropdownItem>Submitted</button>
+                          <button value="Rejected" ngbDropdownItem>Rejected</button>
+                          <button value="Drafted" ngbDropdownItem>Drafted</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-4" style="display:flex;  background:#fff">
+                  <div style="flex:1; background:#fff">
+                    <button (click)="getIMDBData()" class="btn btn-primary" style="height: 56px; min-width:100%; border-radius: 0; font-size: 15px; background: #33BBEC; border: #33BBEC">
+                      <i class="fa fa-search" style="color:white; background-color: #33BBEC"></i>
+                      Search
+                    </button>
+                  </div>
+                  <div style="flex:1; margin-right: 15px; background:#fff">
+                    <button (click)="open(content)" class="btn btn-primary ml-3" style="height: 56px; min-width:100%; border-radius: 0; font-size: 15px; background: #0d416b; border: #0d416b">
+                      <i class="fa fa-plus" style="color: white; background-color:#0d416b"></i>
+                      Add
+                    </button>
+                    <ng-template></ng-template>
+                  </div>
+                </div>
+          </div>
+          </div>
+        </div>
+       </div>
+    
+    
+          <div class = "container mt-3">
+            <div class="main main-expand-lg main-light bg-light">
+              <div class="card card-default p-3 empty" style="padding-bottom:5px !important">
+                <div class = "row">
+                  <div class="col-md-12" style="background-color: #fff">
+                    <table class="table table-hover no-border">
+                      <thead>
+                        <tr>
+                          <th id="stat">Start Date</th>
+                          <th id="stat">End Date</th>
+                          <th id="stat">Hours</th>
+                          <th id="stat">Submitted Date</th>
+                          <th id="stat">Status</th>
+                          <th id="stat">Approved Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+          
+                        <tr (click) = "dataLoad2()" class="data">
+                          <td id="status" class="Start">sep 19, 2021</td>
+                          <td id="status" class="End">sep 25, 2021</td>
+                          <td id="status" class="Hours">40</td>
+                          <td id="status" class="Submitted">sep 24, 2021</td>
+                          <td id="status" class="Status">
+                            <p class="label label-success" style= "width: 100px;
+                            margin-left: 75px; background-color: rgb(0, 170, 231)">Submitted</p>
+                          </td>
+                          <td id="status" class="Approved">N/A</td>
+                        </tr>
+
+  
+                        <tr (click) = "dataLoad()" class="data">
+                          <td id="status" class="Start">sep 12, 2021</td>
+                          <td id="status" class="End">sep 18, 2021</td>
+                          <td id="status" class="Hours">40</td>
+                          <td id="status" class="Submitted">sep 17, 2021</td>
+                          <td id="status" class="Status">
+                            <p class="label label-success" style= "width: 100px;
+                            margin-left: 75px; background-color: rgb(0, 170, 231)">Submitted</p>
+                          </td>
+                          <td id="status" class="Approved">N/A</td>
+                        </tr>
+  
+                        <tr (click) = "dataLoad1()" class="data">
+                          <td id="status" class="Start">sep 5, 2021</td>
+                          <td id="status" class="End">sep 11, 2021</td>
+                          <td id="status" class="Hours">32</td>
+                          <td id="status" class="Submitted">sep 10, 2021</td>
+                          <td id="status" class="Status">
+                            <p class="label label-success" style= "width: 100px;
+                            margin-left: 75px; background-color: rgb(0, 170, 231)">Submitted</p>
+                          </td>
+                          <td id="status" class="Approved">N/A</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+    
+                <div class="row pt-4" style="background-color: #fff">
+                  <div class="col-md-6"style="background-color: #fff">
+                    <span style = "background-color: #fff; font-size: 12px; padding: 0 20px; color: #575757">
+                      Displaying
+                      <b style = "background-color: #fff" class="Main">1-3</b> of 3 entries
+                    </span>
+                  </div>
+                  <div class="col-md-6" style = "background-color: #fff">
+                    <div class="pagination">
+                      <ngb-pagination style = "background-color: #fff" [collectionSize]="10" [boundaryLinks]="true" aria-label="Custom pagination">
+                        <ng-template style = "background-color: #fff" ngbPaginationPrevious>Prev</ng-template>
+                        <ng-template style = "background-color: #fff" ngbPaginationNext>Next</ng-template>
+                        <ng-template style = "background-color: #fff" ngbPaginationNumber let-p>1</ng-template>
+                      </ngb-pagination>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+  <ng-template #content let-modal>
+    <div class="modal-content">
+      <div class="modal-body text-center m-t-20">
+        <h5 class="Txt text-center" style="margin:0 50px">
+          You are about to add timeSheet for this week</h5>
+        <p style="margin:6px">(Sep 26, 2021 - Oct 2, 2021)</p>
+        <p>
+          <i>If you wish to change date,
+            click <a style="position: relative;">here</a><i 
+             class="fa fa-calendar" style="margin:3px"></i></i></p>
+             <ngb-datepicker #d></ngb-datepicker>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button (click) = "DataInsert()" (click)="modal.dismiss('Cross click')" type="submit" value="Submit" id="btn-Proceed" class="btn btn-cons">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  
+  
+  <ng-http-loader></ng-http-loader>

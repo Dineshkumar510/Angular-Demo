@@ -1,0 +1,103 @@
+
+  <div class="continer">
+    <nav class="Navbared navbar navbar-expand-lg navbar-light bg-light">
+      
+    <div class="brand inline m-l-10">
+      <img alt="logo" height="40" 
+      src="https://hubble.miraclesoft.com/assets/miracle-logo-dark.png"
+      width="150">
+    </div>
+
+    
+    <div id="Profile" class="d-flex align-items-center">
+        <div class="pull-left p-r-10 fs-14 font-heading d-lg-block d-none">
+          <span class="semi-bold">Dinesh kumar Boddep... </span>
+        </div>
+        <span class="thumbnail-wrapper">
+          <img id="thumbnail"  placement="bottom"
+          ngbPopover="Viva" popoverTitle="m" alt="icon" height="34" width="34" 
+          src="https://www.miraclesoft.com/images/employee-profile-pics/dboddepalli.png">
+        </span>
+    </div>
+
+  </nav>
+</div>
+
+
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+          <div style="color: #323237;" class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+              <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+                <li>
+                  <a id="headings" href="/MainData" class="mt-3 nav-link px-0 align-middle">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <span id="sideMenu" class="ms-1 d-none d-lg-inline">
+                        TimeSheets
+                      </span>
+                    </div>
+                  <div id="icons" class="col-md-3">
+                  <i id="icons" class="fa fa-clock-o"></i>
+                  </div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a id="headings" href="/leaves" class="mt-2 nav-link px-0 align-middle">
+                <div class="row">
+                  <div class="col-md-6">
+                    <span id="sideMenu" class="ms-1 d-none d-lg-inline">
+                      Leaves
+                    </span>
+                  </div>
+                <div id="icons" class="col-md-3">
+                <i id="icons" class="fa fa-umbrella"></i>
+                </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a id="headings" href="/Hierarchy" class="mt-2 nav-link px-0 align-middle">
+              <div class="row">
+                <div class="col-md-6">
+                  <span id="sideMenu" class="ms-1 d-none d-lg-inline">
+                    Hierarchy
+                  </span>
+                </div>
+              <div id="icons" class="col-md-3">
+              <i id="icons" class="fa fa-users"></i>
+              </div>
+              </div>
+            </a>
+          </li>
+
+              </ul>  
+            </div>
+          </div>
+
+
+                <div class="col py-3">
+                  <router-outlet></router-outlet>
+
+                  <div class="container">
+                    <hr class="style-two">
+                  </div>
+                      
+                  <div class="container">
+                    <div style = "padding: 15px" class="sm-text-center">
+                      <p class="small no-margin pull-left sm-pull-reset">
+                        <span id="sta">&#169; 2021</span>
+                        <span class="copyright"> Miracle Software Systems, Inc.</span>
+                      </p>
+                    </div>
+                  </div>
+                  
+                </div>
+      </div>
+    </div>
+
+   
