@@ -4,17 +4,23 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
 interface FoodNode {
   name: string;
+  study: string;
   children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
  {
     name: 'Chanakya Venkata Lokam',
+    study: '',
     children: [
       {
         name: 'Siva Kusampudi',
+        study: 'Manager-web, content&social',
         children: [
-          {name: 'Dinesh kumar Boddepalli'},
+          {
+            name: 'Dinesh kumar Boddepalli',
+            study: 'Jr.Web Master',
+          },
         ]
       },
     ]
