@@ -22,17 +22,19 @@
 div.space{
   margin-left: 15px;
   font-size: 14px;
-  border: 1px solid black;
+  border: 1px solid rgba(240, 233, 233, 0.808);
   margin: 10px;
   padding: 10px 10px 10px 55px;
   border-radius: 10px;
   display: flex;
   position: relative;
   background-color: #0D416B;
+  -webkit-box-shadow: 9px 0px 22px 2px rgba(0,0,0,0.1); 
+box-shadow: 9px 0px 22px 2px rgba(139, 100, 100, 0.1);
   color: #fff;
   min-height: 40px;
 }
-img{
+img#small-img{
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -41,8 +43,16 @@ img{
   position: absolute;
   left: -8px;
   top: -5px;
+  vertical-align: middle;
+    border-style: none;
 }
 
+img#big-img{
+  height: 205px; 
+  width: 205px; 
+  border-radius:50%;
+  display: block;
+}
 
 button#button{
   border-radius: 50%;
@@ -58,3 +68,35 @@ button#button1{
   display: hidden;
 }
 
+div.vl{
+  border-left: 1px solid #B7B2B3;
+  height: 69vh;
+}
+
+@media (max-width: 991px)
+{
+.hier-img[_ngcontent-c6] {
+    height: 100px!important;
+    width: 100px!important;
+}
+}
+
+
+button.btn {
+  border-radius: 0%;
+  color: #fff;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none; 
+
+}
+
+button.btn:active {
+  border-radius: 0%;
+  color: #fff;
+  border: none;
+}
+
+div.text-center{
+  text-align: center !important;
+}

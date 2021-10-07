@@ -12,23 +12,23 @@
 
 
   <div class="container container-fixed-lg">
-    <div class="card card-default p-3" style="min-height: 69vh; 
+    <div class="card card-default p-3" style="min-height: 59vh; 
     padding-bottom: 5px !important; 
     margin-bottom: 15px !important">
 
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
+
+            <div class="col-md-8 col-sm-8">
               <mat-tree style="margin-left: 10px; margin-top: 10px" [dataSource]="dataSource" [treeControl]="treeControl">
   
-
                 <mat-tree-node id="style-block" *matTreeNodeDef="let node" matTreeNodePadding>
                   <button id="button1" mat-icon-button disabled></button>
-                  
+
                   <div class="space">
                       <div class="img-container">
-                        <img _ngcontent-c6="" onerror="this.src='assets/user.svg';" src="https://www.miraclesoft.com/images/employee-profile-pics/dboddepalli.png">
-                          <div class="">
+                        <img id="small-img" _ngcontent-c6="" onerror="this.src='assets/user.svg';" src="https://www.miraclesoft.com/images/employee-profile-pics/dboddepalli.png">
+                          <div class="text">
                             {{node.name}}
                           </div>
                       </div>
@@ -46,10 +46,10 @@
                     </mat-icon>
                   </button>
 
-                  <div class="space">
+                  <div class="space" style="background-color: #00AAE7">
                     <div class="img-contain">
-                      <img _ngcontent-c6="" onerror="this.src='assets/user.svg';" src="https://www.miraclesoft.com/images/employee-profile-pics/vkusampudi.png">
-                        <div class="">
+                      <img id="small-img" _ngcontent-c6="" onerror="this.src='assets/user.svg';" src="https://www.miraclesoft.com/images/employee-profile-pics/clokam.png">
+                        <div class="text">
                           {{node.name}}
                         </div>
                     </div>
@@ -59,11 +59,129 @@
              
               </mat-tree>
             </div>
+
+      
+              <div class="col-md-1">
+                <div class="vl"></div>
+              </div>
+
+              
+                <div class="col-md-3 col-sm-3" style="margin-top: 15px; padding-top: 15px; height: 100%;">
+
+                  <div class="text-center" style="display: block;">
+                    <img  alt="" class="image-fluid hier-img" style="height: 205px; width: 205px;border-radius:50%; margin-right:80px;" src="https://www.miraclesoft.com/images/employee-profile-pics/dboddepalli.png">
+                  </div>
+                  
+                  <div style="margin-right:30px; text-align:center; display: block;">
+                    <div class="name" style="font-size: 17px;font-weight: bold;"></div>
+                    <div class="designation"> Jr.Web Master </div>
+                    <p class="mt-0 mb-0">
+                      <span class="ng-star-inserted">
+                        <i class="fa fa-volume-control-phone alt mr-2 text-primary"></i>-- </span>
+                        <span class="ng-star-inserted">
+                          <i class="fa fa-mobile alt mr-2 ml-2 text-primary"></i>9502955643 </span>
+                    </p>
+                        <p > Reports To : <span style="font-weight: bold">vkusampudi</span></p>
+                        <button (click)="open(content)" class="btn btn" style="background-color: #00AAE7;"> View Profile </button>
+                      </div>
+
+                </div>
+
           </div>
         </div>
-
-        <div class="vl"></div>
     
     </div>
   </div>
   
+
+
+
+
+
+
+<!--Modal template-->
+
+  <ng-template #content let-modal>
+    
+    <div class="modal fade slide-up disable-scroll in show" style="display: block">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper" style="margin-top: 100px;">
+          <div class="modal-content" style="width: 800px">
+            <button type="button" class="close" style="margin-top:15px; margin-left: 730px;" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body" id="style" style="padding: 50px 75px 25px 50px; max-height: 500px; overflow: auto">
+      
+              <div>
+                    <div class="row">
+
+                      <div class="col-md-5 text-center" style="border-right: 1px solid #e1e1e1">
+                            <img alt="" style="height:150px;width:150px" src="https://www.miraclesoft.com/images/employee-profile-pics/dboddepalli.png">
+                            <h5 style="font-size: 19px;">
+                              <span style="font-weight: 500;"> Dinesh Kumar Boddepalli </span>
+                            </h5>
+                              <p style="font-size: 11px;margin-top: -9px;" class="ng-star-inserted"> (Dinesh kumar)</p>
+                              <p style="font-size: 15px;" class="ng-star-inserted"> Jr.Web Master</p>
+                              <p style="font-size: 9px;margin-top: -9px;">Since Sep 7, 2021</p>
+                      </div>
+
+                      <div _ngcontent-c6="" class="col-md-7">
+                          <div _ngcontent-c6="" class="row" style="display: inline-flex;">
+                              <div _ngcontent-c6="" class="col-md-5 text-left">
+                                <label _ngcontent-c6="" class="for-label" for="">Mail ID</label>
+                              </div>
+                                <div _ngcontent-c6="" class="col-md-7 text-right">
+                                  <p _ngcontent-c6="" class="for-text">
+                                    <i _ngcontent-c6="" class="fa fa-copy mt-1 mr-1 ng-star-inserted" style="color: #b7b2b3;" tooltip="copy"></i>
+                                    dboddepalli@mira.. 
+                                  </p>
+                                </div>
+                                  <div _ngcontent-c6="" class="col-md-5 text-left">
+                                    <label _ngcontent-c6="" class="for-label" for="">Department</label>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-7 text-right">
+                                    <p _ngcontent-c6="" class="for-text">Marketing </p>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-5 text-left ng-star-inserted">
+                                    <label _ngcontent-c6="" class="for-label" for="">Team Name</label>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-7 text-right ng-star-inserted">
+                                    <p _ngcontent-c6="" class="for-text">Web Design </p>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-5 text-left">
+                                    <label _ngcontent-c6="" class="for-label" for="">Reports to</label>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-7 text-right">
+                                    <p _ngcontent-c6="" class="for-text">Siva   Kusampudi </p>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-5 text-left">
+                                    <label _ngcontent-c6="" class="for-label" for="">HR Contact</label>
+                                  </div>
+                                  <div _ngcontent-c6="" class="col-md-7 text-right">
+                                    <p _ngcontent-c6="" class="for-text">Padma Priya  Kamsu </p>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                    </div>
+
+
+                    <div _ngcontent-c6="" class="mt-2 badge-custom text-center" id="style" style="margin-bottom: 25px;max-width: 100%;overflow: auto; font-size: 18px;">
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> Web technologies </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> Html </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> Css </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> java script </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> React js </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> nodejs </a>
+                        <a _ngcontent-c6="" class="mr-1 mt-1 badge ng-star-inserted" style="border:1px solid #e1e1e1;color:#575757;background-color:  white;"> expressjs </a>
+                    </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </ng-template>

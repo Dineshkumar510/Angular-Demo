@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 interface FoodNode {
   name: string;
@@ -24,6 +26,7 @@ const TREE_DATA: FoodNode[] = [
         ]
       },
     ]
+
   },
 ];
 
@@ -42,10 +45,17 @@ interface ExampleFlatNode {
 })
 export class HierarchyComponent implements OnInit {
 
+  closeResult = '';
+
+  constructor(private modalService: NgbModal) {
+    this.dataSource.data = TREE_DATA;
+  }
+
 
   ngOnInit(): void {
   }
 
+  //tree ts from material
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -62,10 +72,38 @@ export class HierarchyComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
-    this.dataSource.data = TREE_DATA;
-  }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+
+
+  //modal ts from ngb
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+
+
+
+
+
+
+
+
 
 }
