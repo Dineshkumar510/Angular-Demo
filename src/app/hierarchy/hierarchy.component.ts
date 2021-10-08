@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 interface FoodNode {
@@ -51,6 +52,7 @@ export class HierarchyComponent implements OnInit {
     this.dataSource.data = TREE_DATA;
   }
 
+  public tree: any;
 
   ngOnInit(): void {
   }
@@ -72,9 +74,14 @@ export class HierarchyComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
+
+@ViewChild('tree') tree: { treeControl: { expandAll: () => void; }; };
+
+ngAfterViewInit() {
+  this.tree.treeControl.expandAll();
+}
 
 
   //modal ts from ngb
@@ -96,11 +103,6 @@ export class HierarchyComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
-
-
-
-
 
 
 
