@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MainDataComponent } from './main-data/main-data.component';
 import { LeavesComponent } from './leaves/leaves.component';
 import { HierarchyComponent } from './hierarchy/hierarchy.component';
+import { CalenderComponent } from './calender/calender.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'MainData', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'DataInsert', component: DataInsertComponent},
   {path:'leaves', component: LeavesComponent},
   {path: 'Hierarchy', component: HierarchyComponent},
+  {path: 'calender', component: CalenderComponent},
   {path:'dataLoad', component: DataLoadComponent},
   {path: 'dataLoad1', component: DataLoad1Component}, 
   {path: 'dataLoad2', component: DataLoad2Component},

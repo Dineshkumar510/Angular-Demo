@@ -1,1 +1,142 @@
-<p>calender works!</p>
+
+<div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <span style="cursor: default">Home</span>
+      </li>
+      <li class="breadcrumb-item active">
+        <span id="sheets">Calendar</span>
+      </li>
+    </ol>
+  </div>
+
+
+  <div class="container-fluid container-fixed-lg">
+      <div class="card card-default p-3 mt-4">
+          <div class="row">
+              <div class="col-md-8">
+
+                  <div>
+                      <div class="row text-center" style="margin-top: 10px">
+
+                          <div class="col-md-4" style="text-align:left">
+                              <div class="btn-group">
+                                  <button class="btn btn-primary"
+                                   mwlCalendarPreviousView
+                                  [view]="view"
+                                  [(viewDate)]="viewDate"
+                                  (viewDateChange)="closeOpenMonthViewDay()">
+                                    <i class="fa fa-chevron-left"></i>
+                                  </button>
+                                  <button class="btn btn-primary"
+                                  mwlCalendarNextView
+                                  [view]="view"
+                                  [(viewDate)]="viewDate"
+                                  (viewDateChange)="closeOpenMonthViewDay()">
+                                    <i class="fa fa-chevron-right"></i>
+                                  </button>
+                              </div>
+                          </div>
+
+                          <div class="col-md-4">
+                              <h4 style="font-weight: bold; color: #2368A0; margin-top: -1px">
+                                {{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}
+                              </h4>
+                          </div>
+
+                          <div class="col-md-4" style="text-align: right">
+                              <div class="btn-group"
+                              mwlCalendarToday
+                              [(viewDate)]="viewDate">
+                                <div class="btn btn-primary">Today</div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+
+                <div class="mt-2">
+
+                      <div [ngSwitch]="view">
+                            <mwl-calendar-month-view
+                            *ngSwitchCase="CalendarView.Month"
+                            [viewDate]="viewDate"
+                            [events]="events"
+                            [refresh]="refresh"
+                            (eventTimesChanged)="eventTimesChanged($event)"
+                            >
+                            </mwl-calendar-month-view>
+                            <mwl-calendar-week-view
+                            *ngSwitchCase="CalendarView.Week"
+                            [viewDate]="viewDate"
+                            [events]="events"
+                            [refresh]="refresh"
+                            (eventTimesChanged)="eventTimesChanged($event)"
+                            >
+                            </mwl-calendar-week-view>
+                            <mwl-calendar-day-view
+                            *ngSwitchCase="CalendarView.Day"
+                            [viewDate]="viewDate"
+                            [events]="events"
+                            [refresh]="refresh"
+                            (eventTimesChanged)="eventTimesChanged($event)"
+                            >
+                            </mwl-calendar-day-view>
+                      </div>
+                </div>
+
+            
+              </div>
+
+              <div class="col-md-4">
+                  <div>
+
+                    <cdk-accordion class="example-accordion">
+
+                        <cdk-accordion-item
+                          *ngFor="let item of items; let index = index;"
+                          #accordionItem="cdkAccordionItem"
+                          class="example-accordion-item"
+                          role="button"
+                          tabindex="0"
+                          [attr.id]="'accordion-header-' + index"
+                          [attr.aria-expanded]="accordionItem.expanded"
+                          [attr.aria-controls]="'accordion-body-' + index">
+                          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                            {{ item }}
+                            <span class="example-accordion-item-description">
+                              Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+                            </span>
+                          </div>
+
+                          <div
+                            class="example-accordion-item-body"
+                            role="region"
+                            [style.display]="accordionItem.expanded ? '' : 'none'"
+                            [attr.id]="'accordion-body-' + index"
+                            [attr.aria-labelledby]="'accordion-header-' + index">
+
+                            <div class="card-body">
+                                <div class="empty" style="text-align: center;">
+                                    <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 50px; width: 50px"/>
+                                    <br>
+                                    "No Leaves found"
+                                </div>
+                            </div>
+
+                          </div>
+                        </cdk-accordion-item>
+                        
+                      </cdk-accordion>
+
+                  </div>
+              </div>
+
+
+          </div>
+      </div>
+  </div>
+
+
+

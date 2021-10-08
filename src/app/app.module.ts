@@ -30,7 +30,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CalenderComponent } from './calender/calender.component';
 import { HierarchyComponent } from './hierarchy/hierarchy.component';
-
+import { CommonModule } from '@angular/common';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 
 @NgModule({
   declarations: [
@@ -59,13 +63,17 @@ import { HierarchyComponent } from './hierarchy/hierarchy.component';
     MatIconModule,
     MatMenuModule,
     MatSelectModule,
+    CdkAccordionModule,
     MatTreeModule,
+    CommonModule,
+    NgbModalModule,
     NgHttpLoaderModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,13 +5,13 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 
-interface FoodNode {
+interface NameNode {
   name: string;
   study: string;
-  children?: FoodNode[];
+  children?: NameNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: NameNode[] = [
  {
     name: 'Chanakya Venkata Lokam',
     study: '',
@@ -27,7 +27,6 @@ const TREE_DATA: FoodNode[] = [
         ]
       },
     ]
-
   },
 ];
 
@@ -58,7 +57,7 @@ export class HierarchyComponent implements OnInit {
   }
 
   //tree ts from material
-  private _transformer = (node: FoodNode, level: number) => {
+  private _transformer = (node: NameNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -77,11 +76,10 @@ export class HierarchyComponent implements OnInit {
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
 
-@ViewChild('tree') tree: { treeControl: { expandAll: () => void; }; };
 
-ngAfterViewInit() {
-  this.tree.treeControl.expandAll();
-}
+  ngAfterViewInit(): void {
+    this.treeControl.expandAll();
+  }
 
 
   //modal ts from ngb
