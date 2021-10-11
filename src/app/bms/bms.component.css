@@ -1,0 +1,169 @@
+body{
+  box-sizing: border-box;
+}
+
+.breadcrumb{
+    background-color: #F0F0F0;
+  }
+#sheets{
+    cursor: default;
+    text-decoration: none !important;
+    color:#0090D9;
+}
+    
+#sheets:hover{
+    text-decoration: none !important;
+    color:#0090D9;
+    background-color: #F0F0F0;
+}
+
+
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 768px){
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+}
+
+.form-input-group {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.input-group-append{
+  display: flex;
+}
+
+.input-group-text {
+  border: 0;
+  border-radius: 0;
+  min-width: 50px;
+}
+
+.form-group-default.input-group label {
+  margin-top: 6px;
+  padding-left: 12px;
+}
+
+.form-input-group{
+  height: 60px;
+  border: 1px solid #DEDEDE;
+  border-right: none;
+}
+
+input.placeholder{
+  color: #DEDEDE;
+}
+
+.input-group-text i {
+  width: 100%;
+}
+
+.input-group-text{
+  height: 60px;
+}
+
+
+div.form-control:focus{
+  background: transparent;
+}
+
+div.form-control:active{
+  background: transparent;
+}
+
+input.form-control{
+  margin-top: -15px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none
+}
+
+input.form-control:focus{
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+
+input.form-control:active{
+  border: none;
+  outline: none;
+  -webkit-appearance: none
+}
+
+div#options{
+  border: 1px solid #DEDEDE;
+  height: 60px;
+  transition: all 0.4s ease-in-out;
+}
+
+
+button#button-basic{
+  height: auto;
+  text-align: center;
+  justify-content: center;
+  width: 220px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+
+ul#dropdown-basic{
+  max-height: 300px;
+  overflow: auto;
+  text-align: left;
+  justify-content: left;
+  width: 220px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+
+
+button#Main-button{
+  width: 220px;
+  height: 60px;
+  border-radius: 0;
+  background-color: #00AAE7;
+  color: #fff;
+  outline: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+
+button#Main-button:hover{
+  background-color: #33BBEC;
+  color: #fff;
+  width: 220px;
+  height: 60px;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}

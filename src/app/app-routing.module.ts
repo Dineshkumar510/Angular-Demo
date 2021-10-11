@@ -11,6 +11,7 @@ import { MainDataComponent } from './main-data/main-data.component';
 import { LeavesComponent } from './leaves/leaves.component';
 import { HierarchyComponent } from './hierarchy/hierarchy.component';
 import { CalenderComponent } from './calender/calender.component';
+import { BMSComponent } from './bms/bms.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'MainData', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'leaves', component: LeavesComponent},
   {path: 'Hierarchy', component: HierarchyComponent},
   {path: 'calender', component: CalenderComponent},
+  {path: 'bridge-management-system', component: BMSComponent},
   {path:'dataLoad', component: DataLoadComponent},
   {path: 'dataLoad1', component: DataLoad1Component}, 
   {path: 'dataLoad2', component: DataLoad2Component},

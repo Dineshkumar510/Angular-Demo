@@ -103,11 +103,8 @@
                           [attr.id]="'accordion-header-' + index"
                           [attr.aria-expanded]="accordionItem.expanded"
                           [attr.aria-controls]="'accordion-body-' + index">
-                          <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                          <div id="item" class="example-accordion-item-header" (click)="accordionItem.toggle()">
                             {{ item }}
-                            <span class="example-accordion-item-description">
-                              Click to {{ accordionItem.expanded ? 'close' : 'open' }}
-                            </span>
                           </div>
 
                           <div
@@ -119,14 +116,153 @@
 
                             <div class="card-body">
                                 <div class="empty" style="text-align: center;">
-                                    <img src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 50px; width: 50px"/>
+                                    <img class="thumbnail" onerror="this.src='./src/assets/images/no-results.png';"
+                                     src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 50px; width: 50px"/>
                                     <br>
-                                    "No Leaves found"
+                                    "No events found"
                                 </div>
                             </div>
 
                           </div>
                         </cdk-accordion-item>
+
+                        <div class="space"></div>
+
+                        <cdk-accordion-item
+                        *ngFor="let item of items1; let index = index;"
+                        #accordionItem="cdkAccordionItem"
+                        class="example-accordion-item"
+                        role="button"
+                        tabindex="0"
+                        [attr.id]="'accordion-header-' + index"
+                        [attr.aria-expanded]="accordionItem.expanded"
+                        [attr.aria-controls]="'accordion-body-' + index">
+                        <div id="item1" class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                          {{ item }}
+                        </div>
+
+                        <div
+                          class="example-accordion-item-body"
+                          role="region"
+                          [style.display]="accordionItem.expanded ? '' : 'none'"
+                          [attr.id]="'accordion-body-' + index"
+                          [attr.aria-labelledby]="'accordion-header-' + index">
+
+                          <div class="collapse ng-trigger ng-trigger-collapseState show active" style="opacity: 1;">
+                            <div class="card-body">
+                              <div class="holiday-list customBody" id="style">
+                                <span class="ng-star-inserted">
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0; padding-bottom: 10px;">New Year’s Day</h4></div>
+                                    <div class="right"><span>Jan 1, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Good Friday</h4></div>
+                                    <div class="right"><span>Apr 2, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Memorial Day</h4></div>
+                                    <div class="right"><span>May 31, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Independence Day - Recognized</h4></div>
+                                    <div class="right"><span>Jul 5, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Labor Day</h4></div>
+                                    <div class="right"><span>Sep 6, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Thanksgiving Day</h4></div>
+                                    <div class="right"><span>Nov 25, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Thanksgiving – Day After</h4></div>
+                                    <div class="right"><span>Nov 26, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">Christmas Eve</h4></div>
+                                    <div class="right"><span>Dec 24, 2021</span></div>
+                                  </div>
+                                  <div class="data ng-star-inserted">
+                                    <div class="left"><h4 style="margin: 0;padding-bottom: 10px;">New Year’s Day eve</h4></div>
+                                    <div class="right"><span>Dec 31, 2021</span></div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </cdk-accordion-item>
+
+                      <div class="space"></div>
+                        
+                      <cdk-accordion-item
+                          *ngFor="let item of items2; let index = index;"
+                          #accordionItem="cdkAccordionItem"
+                          class="example-accordion-item"
+                          role="button"
+                          tabindex="0"
+                          [attr.id]="'accordion-header-' + index"
+                          [attr.aria-expanded]="accordionItem.expanded"
+                          [attr.aria-controls]="'accordion-body-' + index">
+                          <div id="item2" class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                            {{ item }}
+                          </div>
+
+                          <div
+                            class="example-accordion-item-body"
+                            role="region"
+                            [style.display]="accordionItem.expanded ? '' : 'none'"
+                            [attr.id]="'accordion-body-' + index"
+                            [attr.aria-labelledby]="'accordion-header-' + index">
+
+                            <div class="card-body">
+                                <div class="empty" style="text-align: center;">
+                                    <img class="thumbnail" onerror="this.src='./src/assets/images/no-results.png';"
+                                     src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 50px; width: 50px"/>
+                                    <br>
+                                    "No Birthdays found"
+                                </div>
+                            </div>
+
+                          </div>
+                        </cdk-accordion-item>
+
+                        <div class="space"></div>
+
+                        <cdk-accordion-item
+                        *ngFor="let item of items3; let index = index;"
+                        #accordionItem="cdkAccordionItem"
+                        class="example-accordion-item"
+                        role="button"
+                        tabindex="0"
+                        [attr.id]="'accordion-header-' + index"
+                        [attr.aria-expanded]="accordionItem.expanded"
+                        [attr.aria-controls]="'accordion-body-' + index">
+                        <div id="item3" class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                          {{ item }}
+                        </div>
+
+                        <div
+                          class="example-accordion-item-body"
+                          role="region"
+                          [style.display]="accordionItem.expanded ? '' : 'none'"
+                          [attr.id]="'accordion-body-' + index"
+                          [attr.aria-labelledby]="'accordion-header-' + index">
+
+                          <div class="card-body">
+                              <div class="empty" style="text-align: center;">
+                                  <img class="thumbnail" onerror="this.src='./src/assets/images/no-results.png';"
+                                   src="https://hubble.miraclesoft.com/assets/img/no-results.png" style="height: 50px; width: 50px"/>
+                                  <br>
+                                  "No Leaves found"
+                              </div>
+                          </div>
+
+                        </div>
+                      </cdk-accordion-item>
                         
                       </cdk-accordion>
 

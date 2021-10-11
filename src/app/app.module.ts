@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -35,6 +34,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { BMSComponent } from './bms/bms.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     LeavesComponent,
     CalenderComponent,
     HierarchyComponent,
+    BMSComponent,
     
   ],
   imports: [
@@ -57,6 +59,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     HttpClientModule,
     RouterModule, 
     FormsModule,
+    DropDownListModule,
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,

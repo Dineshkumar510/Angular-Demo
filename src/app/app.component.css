@@ -1,3 +1,7 @@
+div#navbar{
+  position: sticky;
+}
+
 
 div#Profile{
   margin-left: 945px;
@@ -131,6 +135,17 @@ p.label{
   color: #ffffff;
 }
 
+i#icons-phone{
+  margin-left: 66px;
+  color: #91ADA8;
+  font-size: 16px;
+  float: left;
+}
+
+i#icons-phone:hover{
+  color: #fff;
+  transition: all 0.2s ease;
+}
 
 i#icons{
   margin-left: 50px;
@@ -145,10 +160,10 @@ i#icons:hover{
   transition: all 0.2s ease;
 }
 
+
 div span#sideMenu{
   font-size: 16px; 
   color: #91ADA8;
-  padding: 0px 0px 0px 22px;
   font-family: 'Open Sans',sans-serif!important;
 }
 

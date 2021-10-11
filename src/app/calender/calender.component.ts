@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {ChangeDetectionStrategy, ViewChild, TemplateRef,} from '@angular/core';
-import {startOfDay, subDays, addDays, endOfMonth} from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {CalendarEvent, CalendarEventTimesChangedEvent, CalendarView} from 'angular-calendar';
-
+import * as moment from 'moment';
 
 
 const colors: any = {
@@ -15,24 +14,23 @@ const colors: any = {
 };
 
 
-
 @Component({
   selector: 'app-calender',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calender.component.html',
   styleUrls: ['./calender.component.css']
 })
-export class CalenderComponent implements OnInit {
+export class CalenderComponent{
 
-  items = ['THIS WEEK', 'HOILDAYS', 'BIRTHDAYS', 'LEAVES'];
-  expandedIndex = 0;
-
- 
-  OnInit(): void {
-   
-  }
+  items: any  = ['THIS WEEK'];
+  items1: any = ['HOLIDAYS'];
+  items2: any = ['BIRTHDAYS'];
+  items3: any = ['LEAVES'];
 
   
+  expandedIndex = 0;
+ 
+
 
   @ViewChild('modalContent', { static: true }) modalContent: 
   TemplateRef<any>;
@@ -55,20 +53,69 @@ export class CalenderComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 0),
-      end: addDays(new Date(), 0),
-      title: 'A 3 day event',
+      start: moment("1/1/2021", "DD/MM/YYYY").toDate(),
+      end: moment("1/1/2021", "DD/MM/YYYY").toDate(),
+      title: 'New Year’s Day',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("2/4/2021", "DD/MM/YYYY").toDate(),
+      end: moment("2/4/2021", "DD/MM/YYYY").toDate(),
+      title: 'Good Friday',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("31/5/2021", "DD/MM/YYYY").toDate(),
+      end: moment("31/5/2021", "DD/MM/YYYY").toDate(),
+      title: 'Memorial Day',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("5/7/2021", "DD/MM/YYYY").toDate(),
+      end: moment("5/7/2021", "DD/MM/YYYY").toDate(),
+      title: 'Independence Day - Recognized',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("6/9/2021", "DD/MM/YYYY").toDate(),
+      end: moment("6/9/2021", "DD/MM/YYYY").toDate(),
+      title: 'Labor Day',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("25/11/2021", "DD/MM/YYYY").toDate(),
+      end: moment("25/11/2021", "DD/MM/YYYY").toDate(),
+      title: 'Thanksgiving Day',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("26/11/2021", "DD/MM/YYYY").toDate(),
+      end: moment("26/11/2021", "DD/MM/YYYY").toDate(),
+      title: 'Thanksgiving – Day After',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("24/12/2021", "DD/MM/YYYY").toDate(),
+      end: moment("24/12/2021", "DD/MM/YYYY").toDate(),
+      title: 'Christmas Eve',
+      color: colors.blue,
+      allDay: true,
+    },
+    {
+      start: moment("31/12/2021", "DD/MM/YYYY").toDate(),
+      end: moment("31/12/2021", "DD/MM/YYYY").toDate(),
+      title: 'New Year’s Day eve',
       color: colors.blue,
       allDay: true,
     },
     
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 0),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true,
-    },
     
   ];
 
@@ -76,10 +123,10 @@ export class CalenderComponent implements OnInit {
 
 
   constructor(private modal: NgbModal) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
+  //ngOnInit(): void {
+  //throw new Error('Method not implemented.');
+  //}
 
   eventTimesChanged({
     event,
