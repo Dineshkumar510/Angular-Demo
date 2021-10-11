@@ -82,6 +82,7 @@ export class HierarchyComponent implements OnInit {
   }
 
 
+
   //modal ts from ngb
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {

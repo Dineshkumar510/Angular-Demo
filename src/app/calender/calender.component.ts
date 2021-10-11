@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ChangeDetectionStrategy, ViewChild, TemplateRef,} from '@angular/core';
-import {startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth} from 'date-fns';
+import {startOfDay, subDays, addDays, endOfMonth} from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {CalendarEvent,CalendarEventTimesChangedEvent,CalendarView} from 'angular-calendar';
+import {CalendarEvent, CalendarEventTimesChangedEvent, CalendarView} from 'angular-calendar';
 
 
 
@@ -28,8 +28,11 @@ export class CalenderComponent implements OnInit {
   expandedIndex = 0;
 
  
+  OnInit(): void {
+   
+  }
 
-
+  
 
   @ViewChild('modalContent', { static: true }) modalContent: 
   TemplateRef<any>;
@@ -73,7 +76,6 @@ export class CalenderComponent implements OnInit {
 
 
   constructor(private modal: NgbModal) {}
-
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -108,7 +110,7 @@ export class CalenderComponent implements OnInit {
   }
 
   closeOpenMonthViewDay(): void {
-    this.activeDayIsOpen = true;
+    this.activeDayIsOpen = false;
   }
 }
  
