@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@syncfusion/ej2-angular-buttons": "^19.3.44",
     "@syncfusion/ej2-angular-dropdowns": "^19.3.44",
     "angular-calendar": "^0.28.28",
     "bootstrap": "^4.5.0",

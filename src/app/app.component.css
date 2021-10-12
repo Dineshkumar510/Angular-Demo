@@ -135,6 +135,19 @@ p.label{
   color: #ffffff;
 }
 
+i#icons-list{
+  margin-left: 60px;
+  color: #91ADA8;
+  font-size: 16px;
+  float: left;
+}
+
+i#icons-list:hover{
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+
 i#icons-phone{
   margin-left: 66px;
   color: #91ADA8;
@@ -168,6 +181,16 @@ div span#sideMenu{
 }
 
 div span#sideMenu:hover{
+  color: white;
+  transition: all 0.2s ease;
+}
+
+div span#sideMenu:focus{
+  color: white;
+  transition: all 0.2s ease;
+}
+
+div span#sideMenu:active{
   color: white;
   transition: all 0.2s ease;
 }

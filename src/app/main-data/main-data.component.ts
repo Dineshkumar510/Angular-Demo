@@ -46,7 +46,7 @@ export class MainDataComponent implements OnInit {
   getIMDBData() {
     return this.http
     .get<any>('http://www.omdbapi.com/?apikey=c9eb6503&s=car')
-    .subscribe((response) => {
+    .subscribe((response): void => {
       alert(response);
       console.log(response);
     }, (error) => {

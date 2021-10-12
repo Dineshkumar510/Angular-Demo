@@ -36,6 +36,12 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { BMSComponent } from './bms/bms.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { PayrollComponent } from './payroll/payroll.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { enableRipple } from '@syncfusion/ej2-base';
+
+
+enableRipple(true); 
 
 @NgModule({
   declarations: [
@@ -50,6 +56,7 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
     CalenderComponent,
     HierarchyComponent,
     BMSComponent,
+    PayrollComponent,
     
   ],
   imports: [
@@ -57,7 +64,8 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule, 
+    RouterModule,
+    MatTabsModule, 
     FormsModule,
     DropDownListModule,
     MatDatepickerModule,
