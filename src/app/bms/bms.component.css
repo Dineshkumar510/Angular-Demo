@@ -118,9 +118,39 @@ input.form-control:active{
 div#options{
   border: 1px solid #DEDEDE;
   height: 60px;
+  width: 100%;
   transition: all 0.4s ease-in-out;
 }
 
+.btn-outline-primary{
+  color: #000;
+  background-color: #fff;
+  border-color: #DEDEDE;
+  height: 60px;
+  width:  225px;
+  border: 1px solid #DEDEDE;
+  border-radius: 0;
+}
+
+.btn-outline-primary:focus{
+  color: #000;
+  background-color: #fff;
+  border-color: #DEDEDE;
+  height: 60px;
+  width:  225px;
+  border: 1px solid #DEDEDE;
+  border-radius: 0;
+}
+
+.btn-outline-primary:active{
+  color: #000;
+  background-color: #fff;
+  border-color: #DEDEDE;
+  height: 60px;
+  width:  225px;
+  border: 1px solid #DEDEDE;
+  border-radius: 0;
+}
 
 button#button-basic{
   height: auto;
@@ -133,12 +163,12 @@ button#button-basic{
   box-shadow: none;
 }
 
-ul#dropdown-basic{
+#dropdown-basic{
   max-height: 300px;
   overflow: auto;
   text-align: left;
   justify-content: left;
-  width: 220px;
+  width: 225px;
   border: none;
   outline: none;
   -webkit-appearance: none;

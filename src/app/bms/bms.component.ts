@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Injectable()
@@ -25,9 +25,6 @@ export class CustomAdapter extends NgbDateAdapter<string> {
   }
 }
 
-/**
- * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
- */
 @Injectable()
 export class CustomDateParserFormatter extends NgbDateParserFormatter {
 
@@ -61,24 +58,60 @@ export class CustomDateParserFormatter extends NgbDateParserFormatter {
   ]
 })
 
-export class BMSComponent implements OnInit {
 
-  public data: string[] = ['Snooker', 'Tennis', 'Cricket', 'Football', 'Rugby'];
+export class BMSComponent implements OnInit {
 
   model: NgbDateStruct;
   date: {year: number, month: number};
 
 
   ngOnInit(): void {
+    
   }
 
-  model1: string;
-  model2: string;
+  public model2: string;
+  public buttonDisabled: boolean;
 
-  constructor(private ngbCalendar: NgbCalendar, private dateAdapter: NgbDateAdapter<string>) {}
+  constructor(private ngbCalendar: NgbCalendar, private dateAdapter: NgbDateAdapter<string>,
+    private modalService: NgbModal) {}
 
+
+  //calendar on format dd/mm/yy
   get today() {
     return this.dateAdapter.toModel(this.ngbCalendar.getToday())!;
   }
+
+
+  // check(){
+  //   if(this.model2.length == 0){
+  //     return true;
+  //   }else {
+  //     return false;
+  //   }
+  // }
+
+  //ngb Modal
+  closeResult = '';
+
+
+
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
 
 }

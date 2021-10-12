@@ -23,7 +23,7 @@
                           <div class="form-group form-group-default input-group" style="height: 84%;">
                               <div class="form-input-group">
                                 <label style="font-weight: 500; font-size: 14px;">DATE</label>
-                                <input class="form-control" placeholder="Date" style="cursor: pointer;"
+                                <input id="date" class="form-control" placeholder="Date" style="cursor: pointer;"
                                 name="d2" #c2="ngModel" (click)="d2.toggle()" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker">
                               </div>
                               <div class="input-group-append">
@@ -36,7 +36,65 @@
 
                       <div id="options-button" class="col-md-4" style="padding: 0px 15px; display: flex; color: #DEDEDE">
                       
-                          <div id="options" class="btn-group" dropdown>
+                            <div class="down form-group form-group-default form-group-default-select-2">
+                              <div ngbDropdown class="d-inline-block">
+                                <button class="downn btn btn-outline-primary" id="dropdownBasic1"
+                                ngbDropdownToggle>TIME (EST)</button>
+                                <div id="dropdown-basic" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">12:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">12:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">01:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">01:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">02:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">02:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">03:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">03:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">04:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">04:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">05:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">05:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">06:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">06:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">07:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">07:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">08:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">08:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">09:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">09:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">10:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">10:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:00 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:30 AM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">12:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">12:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">01:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">01:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">02:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">02:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">03:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">03:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">04:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">04:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">05:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">05:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">06:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">06:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">07:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">07:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">08:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">08:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">09:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">09:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">10:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">10:30 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:00 PM</a></li>
+                                      <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:30 PM</a></li>
+                                </div>
+                            </div>
+                          </div>
+
+
+                          <!--<div id="options" class="btn-group" dropdown>
                               <button id="button-basic" dropdownToggle type="button" 
                                 class="btn dropdown-toggle" 
                                 aria-controls="dropdown-basic">
@@ -94,30 +152,29 @@
                                   <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:00 PM</a></li>
                                   <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">11:30 PM</a></li>
                               </ul>
-                          </div>
+                          </div>-->
 
                       </div>
 
                       <div id="options-button" class="col-md-4" style="padding: 0px 15px; display: flex;">
 
-                          <div id="options" class="btn-group" dropdown>
-
-                              <button id="button-basic" dropdownToggle type="button" 
-                                class="btn dropdown-toggle" 
-                                aria-controls="dropdown-basic" disabled>
-                                Duration
-                                <span class="caret"></span>
-                              </button>
-                              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                                  role="menu" aria-labelledby="button-basic">
+                        <div class="down form-group form-group-default form-group-default-select-2">
+                          <div ngbDropdown class="d-inline-block">
+                            <button class="downn btn btn-outline-primary" id="dropdownBasic1"
+                            ngbDropdownToggle>Duration</button>
+                            <div id="dropdown-basic" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                   <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">30 Minutes</a></li>
                                   <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">60 Minutes</a></li>
                                   <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">90 Minutes</a></li>
-                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2 Hours</a></li>
-                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">3 Hours</a></li>
-                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">4 Hours</a></li>
-                              </ul>
-                          </div>
+                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">02 Hours</a></li>
+                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">03 Hours</a></li>
+                                  <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">04 Hours</a></li>
+                                 
+
+                            </div>
+                        </div>
+                      </div>
+
 
                       </div>
 
@@ -125,7 +182,7 @@
             </div>
 
             <div class="col-md-3">
-              <button id="Main-button" class="btn btn" type="button">Request Bridge</button>
+              <button id="Main-button" (click)="open(content)" class="btn btn" type="button">Request Bridge</button>
             </div>
 
         </div>
@@ -151,3 +208,23 @@
 
 
   </div>
+
+
+
+
+
+
+  <ng-template #content let-modal>
+    <div class="modal-content">
+      <div class="modal-body mt-3">
+        <form>
+          <div class="form-group">
+            <h2 style="font-weight: 400;">Are you sure for booking Conference bridge</h2>
+            
+            <button type="button" (click)="modal.dismiss('Cross click')" class="btn btn-success mr-2">Yes</button>
+            <button type="button" (click)="modal.dismiss('Cross click')" class="btn btn-danger">No</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
