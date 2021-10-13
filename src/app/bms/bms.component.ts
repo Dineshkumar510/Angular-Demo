@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class CustomAdapter extends NgbDateAdapter<string> {
@@ -70,13 +70,12 @@ export class BMSComponent implements OnInit {
   }
 
   public model2: string;
-  public buttonDisabled: boolean;
+  
 
   constructor(
     private ngbCalendar: NgbCalendar, 
     private dateAdapter: NgbDateAdapter<string>,
     private modalService: NgbModal,
-    private http: HttpClient,
   ) {}
 
 

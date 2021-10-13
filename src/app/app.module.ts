@@ -65,6 +65,7 @@ enableRipple(true);
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    
     MatTabsModule, 
     FormsModule,
     DropDownListModule,
