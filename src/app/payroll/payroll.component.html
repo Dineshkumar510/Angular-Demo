@@ -169,16 +169,26 @@
                                     <button id="button-basic" dropdownToggle type="button" 
                                       class="btn dropdown-toggle" 
                                       aria-controls="dropdown-basic">
-                                      Year
+                                      Type of Exemption
                                       <span class="caret"></span>
                                     </button>
                                     <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                                         role="menu" aria-labelledby="button-basic">
-                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2021</a></li>
-                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2020</a></li>
-                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2019</a></li>
-                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2018</a></li>
-                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2017</a></li> 
+                                        <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Bank Fixed Deposits(FDs)-80C</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Equity-linked Savings Scheme(ELSS)-80C</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">House Rent Paid-80GG</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Housing Loan Repayment-Principle-80C</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Insurance for parents-80D</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Insurance other(self,spouse,children)-80D</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Interest on House Property(Housing Loan)-24(b)</a></li> 
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Interest Paid on Education Loan-80E</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Life Insurance Premium-80C</a></li> 
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">National pension scheme(NPS)-80CCD</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">National Saving Certificate(NSC)-80C</a></li> 
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Post Office Time Deposit (POTD)-80C</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Public Provident Fund(PPF) Contribution-80C</a></li> 
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Sukanya Samriddhi Yojana-80C</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Tuition Fees-80C</a></li>  
                                     </ul>
                                 </div>
                             </div>
@@ -192,22 +202,23 @@
                                       <button id="button-basic" dropdownToggle type="button" 
                                         class="btn dropdown-toggle" 
                                         aria-controls="dropdown-basic">
-                                        Year
+                                        Status
                                         <span class="caret"></span>
                                       </button>
                                       <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                                           role="menu" aria-labelledby="button-basic">
-                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2021</a></li>
-                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2020</a></li>
-                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2019</a></li>
-                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2018</a></li>
-                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">2017</a></li> 
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">All</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Applied</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Approved</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Rejected</a></li>
+                                          <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Validity Approved</a></li>
+                                          
                                       </ul>
                                   </div>
                               </div>
                               
                               <div class="col-md-4 offset-5 mt-1" style="display: flex">
-                                  <button class="btn btn-primary" style="height: 56px; width: 50%; border-radius: 0; font-size: 15px">
+                                  <button class="btn btn-primary" (click)="getIMDBData()" style="height: 56px; width: 50%; border-radius: 0; font-size: 15px">
                                     <i class="fa fa-search mr-1"></i> Search
                                   </button>
                                   <button class="btn btn-primary ml-3" style="height: 56px; width: 50%; border-radius: 0; font-size: 15px; 
@@ -241,7 +252,97 @@
 
                     </mat-tab>
 
-                    <mat-tab label="SAVINGS HELP"> 4 </mat-tab>
+                    <mat-tab label="SAVINGS HELP"> 
+                      
+                     <div class="container-fluid mt-3">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                              <cdk-accordion class="example-accordion">
+                                <cdk-accordion-item
+                                  *ngFor="let item of items; let index = index;"
+                                  #accordionItem="cdkAccordionItem"
+                                  class="example-accordion-item"
+                                  role="button"
+                                  tabindex="0"
+                                  [attr.id]="'accordion-header-' + index"
+                                  [attr.aria-expanded]="accordionItem.expanded"
+                                  [attr.aria-controls]="'accordion-body-' + index">
+                                  <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                                    {{ item }}
+                                   
+                                  </div>
+                                  <div
+                                    class="example-accordion-item-body"
+                                    role="region"
+                                    [style.display]="accordionItem.expanded ? '' : 'none'"
+                                    [attr.id]="'accordion-body-' + index"
+                                    [attr.aria-labelledby]="'accordion-header-' + index">
+
+                                    <div class="body" style="padding:22px">
+                                        <p>
+                                          * House Rent Paid Exemption accepts Actuals only.
+                                        </p>
+                                        <p>
+                                          * All the Declarations has a Validity Date,Before the Validity Date ,You must update Actuals against Declarations.
+                                        </p>
+                                        <p>
+                                          * For Example: If you add an Exemption Life Insurance Premium-80C as a Declaration with PaymentDate:07/01/2015 
+                                          (For Declarations Type,Date should be less than the current Financial Year). 
+                                          Once It get's the approved from the payroll Team,you will get a validity Date.
+                                          Let's Say it is 07/01/2016(One year validity). Now,You need to Update the declaration into 
+                                          Actuals before 07/01/2016. To Update the declaration into Actuals,Click on the Exemption in the grid,
+                                          change the type to Actuals,change the PaymentDate:[Newpaymentdate],Upload new Actual attachment and then 
+                                          Click on the update. 
+                                        </p>
+                                        <p>* Savings file shoud not exceed 2MB.</p>
+                                    </div>
+
+                                  </div>
+                                </cdk-accordion-item>
+                              </cdk-accordion>  
+                              
+                              <cdk-accordion class="example-accordion">
+                                <cdk-accordion-item
+                                  *ngFor="let item of item1; let index = index;"
+                                  #accordionItem="cdkAccordionItem"
+                                  class="example-accordion-item"
+                                  role="button"
+                                  tabindex="0"
+                                  [attr.id]="'accordion-header-' + index"
+                                  [attr.aria-expanded]="accordionItem.expanded"
+                                  [attr.aria-controls]="'accordion-body-' + index">
+                                  <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                                    {{ item }}
+                                    
+                                  </div>
+                                  <div
+                                    class="example-accordion-item-body"
+                                    role="region"
+                                    [style.display]="accordionItem.expanded ? '' : 'none'"
+                                    [attr.id]="'accordion-body-' + index"
+                                    [attr.aria-labelledby]="'accordion-header-' + index">
+
+                                    <div class="Nav-warp">
+                                      <mat-tab-group>
+                                        <mat-tab label="80C MAX-LIMIT-RS150000/-"> Content 1 </mat-tab>
+                                        <mat-tab label="80CCD MAX-LIMIT-RS50000/-"> Content 2 </mat-tab>
+                                        <mat-tab label="24(B) MAX-LIMIT-RS200000/-"> Content 3 </mat-tab>
+                                        <mat-tab label="80D MAX-LIMIT-RS55000/-"> Content 4 </mat-tab>
+                                        <mat-tab label="80E-NO LIMIT"> Content 5 </mat-tab>
+                                        <mat-tab label="80GG-NO LIMIT"> Content 6 </mat-tab>
+                                      </mat-tab-group>
+                                    </div>
+
+                                  </div>
+                                </cdk-accordion-item>
+                              </cdk-accordion>
+
+                            </div>
+                        </div>
+                     </div>               
+
+                    </mat-tab>
                     <mat-tab label="NO DUES"> 5 </mat-tab>
                   </mat-tab-group>
                 </div>

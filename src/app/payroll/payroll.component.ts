@@ -62,6 +62,10 @@ export class CustomDateParserFormatter extends NgbDateParserFormatter {
 
 export class PayrollComponent implements OnInit {
 
+  items = ['INSTRUCTIONS'];
+  item1 = ['TAX EXEMPTION CATEGORIES'];
+  expandedIndex = 0;
+
   model: NgbDateStruct;
   date: {year: number, month: number};
   downloads: any;
