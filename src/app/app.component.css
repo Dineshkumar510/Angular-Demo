@@ -147,6 +147,13 @@ i#icons-list:hover{
   transition: all 0.2s ease;
 }
 
+i#icon-search{
+  margin-left: 22px;
+  color: #91ADA8;
+  font-size: 16px;
+  float: left;
+}
+
 
 i#icons-phone{
   margin-left: 66px;
@@ -175,7 +182,7 @@ i#icons:hover{
 
 
 div span#sideMenu{
-  font-size: 16px; 
+  font-size: 15px; 
   color: #91ADA8;
   font-family: 'Open Sans',sans-serif!important;
 }

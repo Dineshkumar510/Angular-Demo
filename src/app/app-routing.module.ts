@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule, Router } from '@angular/router';
+import { Routes, RouterModule} from '@angular/router';
 
 import { DataInsertComponent } from './data-insert/data-insert.component';
 import { DataLoadComponent } from './data-load/data-load.component';
@@ -13,9 +13,11 @@ import { HierarchyComponent } from './hierarchy/hierarchy.component';
 import { CalenderComponent } from './calender/calender.component';
 import { BMSComponent } from './bms/bms.component';
 import { PayrollComponent } from './payroll/payroll.component';
+import { EsearchComponent } from './esearch/esearch.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'MainData', pathMatch: 'full'},
+  {path: 'Employee_Search', component: EsearchComponent},
   {path: 'MainData',component: MainDataComponent},
   {path: 'DataInsert', component: DataInsertComponent},
   {path:'leaves', component: LeavesComponent},

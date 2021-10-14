@@ -1,8 +1,9 @@
-import { Component, Injectable, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Injectable, OnInit, ViewEncapsulation, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Injectable()
 export class CustomAdapter extends NgbDateAdapter<string> {
@@ -62,6 +63,9 @@ export class CustomDateParserFormatter extends NgbDateParserFormatter {
 
 export class PayrollComponent implements OnInit {
 
+  closeResult = '';
+  modalRef?: BsModalRef;
+
   items = ['INSTRUCTIONS'];
   item1 = ['TAX EXEMPTION CATEGORIES'];
   expandedIndex = 0;
@@ -75,6 +79,8 @@ export class PayrollComponent implements OnInit {
     private http: HttpClient,
     private ngbCalendar: NgbCalendar, 
     private dateAdapter: NgbDateAdapter<string>,
+    private modalService: NgbModal,
+    private modalServices: BsModalService,
     ) { }
 
   public model2: string;
@@ -109,6 +115,28 @@ export class PayrollComponent implements OnInit {
     })
   }
 
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalServices.show(template);
+  }
   
 
 }

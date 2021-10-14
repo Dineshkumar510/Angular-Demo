@@ -39,6 +39,7 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { PayrollComponent } from './payroll/payroll.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { enableRipple } from '@syncfusion/ej2-base';
+import { EsearchComponent } from './esearch/esearch.component';
 
 
 enableRipple(true); 
@@ -57,6 +58,7 @@ enableRipple(true);
     HierarchyComponent,
     BMSComponent,
     PayrollComponent,
+    EsearchComponent,
     
   ],
   imports: [
