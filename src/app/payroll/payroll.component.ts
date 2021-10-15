@@ -5,6 +5,7 @@ import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
+
 @Injectable()
 export class CustomAdapter extends NgbDateAdapter<string> {
 
@@ -63,6 +64,7 @@ export class CustomDateParserFormatter extends NgbDateParserFormatter {
 
 export class PayrollComponent implements OnInit {
 
+  isChecked:boolean = false;
   closeResult = '';
   modalRef?: BsModalRef;
 
@@ -136,6 +138,10 @@ export class PayrollComponent implements OnInit {
   
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalServices.show(template);
+  }
+
+  toggleshow(): void{
+    this.isChecked = ! this.isChecked;
   }
   
 

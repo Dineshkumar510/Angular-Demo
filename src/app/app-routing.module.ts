@@ -14,9 +14,11 @@ import { CalenderComponent } from './calender/calender.component';
 import { BMSComponent } from './bms/bms.component';
 import { PayrollComponent } from './payroll/payroll.component';
 import { EsearchComponent } from './esearch/esearch.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'MainData', pathMatch: 'full'},
+  {path: 'Dashboard', component: DashboardComponent},
   {path: 'Employee_Search', component: EsearchComponent},
   {path: 'MainData',component: MainDataComponent},
   {path: 'DataInsert', component: DataInsertComponent},

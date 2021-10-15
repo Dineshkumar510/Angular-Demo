@@ -40,6 +40,8 @@ import { PayrollComponent } from './payroll/payroll.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { EsearchComponent } from './esearch/esearch.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 enableRipple(true); 
@@ -59,6 +61,7 @@ enableRipple(true);
     BMSComponent,
     PayrollComponent,
     EsearchComponent,
+    DashboardComponent,
     
   ],
   imports: [
@@ -67,7 +70,7 @@ enableRipple(true);
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    
+    MatSlideToggleModule,
     MatTabsModule, 
     FormsModule,
     DropDownListModule,

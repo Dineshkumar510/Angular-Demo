@@ -460,3 +460,8 @@ span.semibold{
   background: #f3f3f3;
   padding: 0px;
 }
+
+
+div.mat-slide-toggle-bar{
+  background-color: #BDBDBD;
+}

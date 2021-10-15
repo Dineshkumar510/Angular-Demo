@@ -135,6 +135,18 @@ p.label{
   color: #ffffff;
 }
 
+i#icon-home{
+  margin-left: 33px;
+  color: #91ADA8;
+  font-size: 16px;
+  float: left;
+}
+
+i#icon-home:hover{
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
 i#icons-list{
   margin-left: 60px;
   color: #91ADA8;
@@ -154,6 +166,10 @@ i#icon-search{
   float: left;
 }
 
+i#icon-search:hover{
+  color: #fff;
+  transition: all 0.2s ease;
+}
 
 i#icons-phone{
   margin-left: 66px;

@@ -707,20 +707,21 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                      <div style="display: inline-flex;">
-                                        <p style="line-height: 15px;">Any Due? 
-                                          <i class="fa fa-info-circle" placement="bottom" style="color:#00aae7" tooltip="If you have any amounts due to you from payroll, please do select this option as yes."></i>
-                                        </p>
-                                      </div>
-                                      <label class="switch" style="display: block;">
-                                        <input formcontrolname="pendingDues" type="checkbox" class="ng-untouched ng-pristine ng-valid">
-                                        <span _ngcontent-c9="" class="slider">
-
-                                        </span>
-                                      </label>
+                                        <div style="display: inline-flex;">
+                                            <p style="line-height: 15px;">Any Due? 
+                                                <i class="fa fa-info-circle" placement="bottom" style="color:#00aae7" tooltip="If you have any amounts due to you from payroll, please do select this option as yes."></i>
+                                            </p>
+                                        </div>
+                                        <label class="switch" style="display: block;">
+                                            <span class="slider">
+                                                <mat-slide-toggle [(ngModel)] = "isChecked">{{toggleshow()}}</mat-slide-toggle>
+                                            </span>
+                                        </label>
                                     </div>
 
                                 </div>
+
+                                <div *ngIf="isChecked"> Div is showing</div>
 
                                 <div class="row">
                                     <div class="col-md-12">

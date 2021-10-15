@@ -1,1 +1,117 @@
-<p>esearch works!</p>
+<div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <span style="cursor: default">Home</span>
+      </li>
+      <li class="breadcrumb-item active">
+        <span id="sheets">Employee Search</span>
+      </li>
+    </ol>
+  </div>
+
+
+  <div class="container-fluid container-fixed-lg">
+      <div class="row p-b-10">
+
+            <div class="col-md-8 emp-8">
+                <div class="card card-default">
+                    
+                    <div class="card-body" style="opacity: 1;">
+                        <div class="row align-items-center justify-content-center" style="height: 67vh;">
+                            <div class="col-md-12">
+                                <div class="img">
+                                    <img class="no-res-image" src="assets/images/no-results.png">
+                                </div>
+                                <p>
+                                    <i>Search for any Miraclite and view their profile </i>
+                                </p>
+                                <p style="font-size: 14px; color: gray;">
+                                    <i>Please apply the required filter and search</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 emp-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-default">
+                            <div class="card-body" style="opacity: 1;">
+
+                                <div class="form-group form-group-default input-group mt-3" style="height: 84%;">
+                                    <div class="form-input-group">
+                                        <label style="font-weight: 500; font-size: 12px;">Employee Search</label>
+                                        <input type="text" id="date" class="form-control" placeholder="Search by Name, Email orMobile" style="cursor: pointer;">
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" (click)="getSearchData()" style="background-color: #00AAE7; cursor:pointer">
+                                          <i class="fa fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <h3 class="filter-name mt-3">Filter By</h3>
+
+                                <div class="form-group form-group-default mt-2">
+                                    <div id="options" class="btn-group" dropdown>
+                                        <button id="button-basic" dropdownToggle type="button" 
+                                          class="btn dropdown-toggle" 
+                                          aria-controls="dropdown-basic">
+                                          Department
+                                          <span class="caret"></span>
+                                        </button>
+                                          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                              role="menu" aria-labelledby="button-basic">
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Exective Board</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Marketing</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Operations</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Recruitment</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Sales</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Software Services</a></li>
+                                          </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-default mt-2">
+                                    <div id="options" class="btn-group" dropdown>
+                                        <button id="button-basic" dropdownToggle type="button" 
+                                          class="btn dropdown-toggle" 
+                                          aria-controls="dropdown-basic">
+                                          Work Location
+                                          <span class="caret"></span>
+                                        </button>
+                                          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                              role="menu" aria-labelledby="button-basic">
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Atlanta</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Bentonville</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">HQ(Novi)</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">India-Other</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">LB Colony</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Miracle City</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Miracle Heights</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Miracle Valley</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Onsite</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">US-Other</a></li>
+                                                <li id="option" role="menuitem"><a class="dropdown-item" href="JavaScript:void(0)">Work From Home</a></li>
+                                          </ul>
+                                    </div>  
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      </div>
+  </div>
+
+
+  <table border="1">
+    <tr >
+        <td>items</td>
+    </tr>      
+  </table>
