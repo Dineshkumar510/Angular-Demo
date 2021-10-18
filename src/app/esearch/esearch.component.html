@@ -47,7 +47,7 @@
                                         <input type="text" id="date" class="form-control" placeholder="Search by Name, Email orMobile" style="cursor: pointer;">
                                     </div>
                                     <div class="input-group-append">
-                                        <span class="input-group-text" (click)="getSearchData()" style="background-color: #00AAE7; cursor:pointer">
+                                        <span class="input-group-text"  style="background-color: #00AAE7; cursor:pointer">
                                           <i class="fa fa-search"></i>
                                         </span>
                                     </div>
@@ -110,8 +110,14 @@
   </div>
 
 
-  <table border="1">
-    <tr >
-        <td>items</td>
-    </tr>      
-  </table>
+ 
+
+
+ 
+
+  <ul *ngIf="Employees.results?.length > 0">
+      <li *ngFor = "let user of Employees.results">
+            {{user.name}}
+      </li>
+  </ul>
+ 
