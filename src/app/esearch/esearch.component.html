@@ -116,10 +116,10 @@
  
 
   <ul *ngFor="let user of Employees.results">
-      <li>{{user.gender}}</li>
-      <li>{{user.email}}</li>
+      <li>Gender: {{user.gender}}</li>
+      <li>Email: {{user.email}}</li>
       <img src={{user.picture?.large}}>
-      <li>{{user.name?.first}}</li>
+      <li>Name: {{user.name?.first}}</li>
       <li>age: {{user.dob.age}}</li>
       <li>phone: {{user.phone}}</li>
   </ul>

@@ -21,7 +21,6 @@ export class EsearchComponent implements OnInit {
 
   
 
-
   getSearchData() {
     return this.http
     .get<any>(this.url)

@@ -17,7 +17,7 @@ import { EsearchComponent } from './esearch/esearch.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
- {path: '', redirectTo: 'MainData', pathMatch: 'full'},
+ {path: '', redirectTo: 'Dashboard', pathMatch: 'full'},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Employee_Search', component: EsearchComponent},
   {path: 'MainData',component: MainDataComponent},
