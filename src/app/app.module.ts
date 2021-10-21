@@ -42,6 +42,7 @@ import { enableRipple } from '@syncfusion/ej2-base';
 import { EsearchComponent } from './esearch/esearch.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -63,6 +64,7 @@ enableRipple(true);
     PayrollComponent,
     EsearchComponent,
     DashboardComponent,
+    ProfileComponent,
     
   ],
   imports: [

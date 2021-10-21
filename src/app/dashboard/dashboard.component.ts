@@ -62,8 +62,8 @@ export class DashboardComponent implements OnInit {
     this._http
     .get<any>(this.url)
     .subscribe((response: any) => {
-      this.weather = response;
-      console.log(response.current);
+      this.weather = response.current;
+      this.weather = Array.of(this.weather);
     }, 
     (error: any) => {
         console.log(error);

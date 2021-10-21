@@ -62,5 +62,9 @@ export class AppComponent {
     this.router.navigateByUrl('/dataLoad');
   }
 
+  profile(){
+    this.router.navigateByUrl('/Profile');
+  }
+
 }
 

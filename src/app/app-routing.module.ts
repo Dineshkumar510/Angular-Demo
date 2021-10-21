@@ -15,9 +15,11 @@ import { BMSComponent } from './bms/bms.component';
 import { PayrollComponent } from './payroll/payroll.component';
 import { EsearchComponent } from './esearch/esearch.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'Dashboard', pathMatch: 'full'},
+  {path: 'Profile', component: ProfileComponent},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Employee_Search', component: EsearchComponent},
   {path: 'MainData',component: MainDataComponent},

@@ -21,7 +21,7 @@
                     <p>Miracle City</p>
                   </div>
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" *ngFor= "let item of weather">
 
                       <div class="row">
 
@@ -33,19 +33,19 @@
                         <div class="col-lg-7">
                           <div class="pull-left">
                             <p class="small hint-text no-margin">Currently</p>
-                            <h4 class="text-danger bold no-margin">27.0°
-                              <span class="small">/ 32C</span>
+                            <h4 class="text-danger bold no-margin">{{item?.temp_f}}F
+                              <span class="small">/ {{item?.temp_c}}C</span>
                             </h4>
                           </div>
                           <div class="pull-right">
-                            <img _ngcontent-c16="" style="font-size:100px;color:orange;width: 56px;height: 63px;" src="https://hubble.miraclesoft.com/assets/img/weather/PartlyCloudyNight.png">
+                            <img _ngcontent-c16="" style="font-size:100px;color:orange;width: 56px;height: 63px;" src={{item.condition?.icon}}>
                           </div>
                         </div>
 
                       </div>
 
                       <h5>Feels like 
-                        <span class="semi-bold">Haze</span>
+                        <span class="semi-bold">{{item.condition?.text}}</span>
                       </h5>
 
                         <div class="widget-17-weather">
@@ -55,7 +55,7 @@
                                           <div class="row">
                                             <div class="col-lg-12">
                                               <p class="pull-left">Wind</p>
-                                              <p class="pull-right bold">3.73km/h</p>
+                                              <p class="pull-right bold">{{item?.wind_kph}}km/h</p>
                                             </div>
                                           </div>
 
@@ -69,7 +69,7 @@
                                           <div class="row">
                                             <div class="col-lg-12">
                                               <p class="pull-left">Humidity</p>
-                                              <p class="pull-right bold">94.0%</p>
+                                              <p class="pull-right bold">{{item?.humidity}}%</p>
                                             </div>
                                           </div>
 
@@ -94,7 +94,7 @@
                                       <div class="row">
                                         <div class="col-lg-12">
                                           <p class="pull-left">Precipitation</p>
-                                          <p class="pull-right bold">66.0%</p>
+                                          <p class="pull-right bold">{{item?.precip_mm}}mm</p>
                                         </div>
                                       </div>
 
