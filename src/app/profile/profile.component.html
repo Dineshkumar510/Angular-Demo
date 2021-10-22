@@ -23,32 +23,32 @@
                 <div class="row mt-2 p-4">
                     <div class="col-md-3 profile-sidebar">
                         <div class="card social-card share col1 nav nav-tabs" id="nav-tab" role="tablist" style="width: 100%">
-                            <div class="card-description p-0">
-                                <p class="desc active" style="font-weight: 700;">
+                            <div class="card-description p-0 tab">
+                                <p class="desc active tablinks" (click)="tabs(event, 'Personal')" style="font-weight: 700;">
                                     <i class="fa fa-user"></i> Personal 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Work')" style="font-weight: 700;">
                                     <i class="fa fa-briefcase"></i> Work 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Identity')" style="font-weight: 700;">
                                     <i class="fa fa-address-card-o"></i> Identity 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Contact')" style="font-weight: 700;">
                                     <i class="fa fa-phone"></i> Contact 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Banking')" style="font-weight: 700;">
                                     <i class="fa fa-building"></i> Banking 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Education')" style="font-weight: 700;">
                                     <i class="fa fa-graduation-cap"></i> Education 
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Skills')" style="font-weight: 700;">
                                     <i class="fa fa-certificate"></i> Skills 
                                 </p
-                                ><p class="desc" style="font-weight: 700;">
+                                ><p class="desc tablinks" (click)="tabs(event, 'Social')" style="font-weight: 700;">
                                     <i class="fa fa-globe"></i> Social
                                 </p>
-                                <p class="desc" style="font-weight: 700;">
+                                <p class="desc tablinks" (click)="tabs(event, 'Travel')" style="font-weight: 700;">
                                     <i class="fa fa-plane"></i> Travel 
                                 </p>
                             </div>
@@ -58,7 +58,7 @@
                     <div class="col-md-9">
 
                         <!--Personal-->
-                        <div class="card social-card share col1" data-social="item" style="width: 100%">
+                        <div class="card social-card share col1 tabcontent" id="Personal" data-social="item" style="width: 100%">
                             <div class="card-header clearfix">
                                 <h5 class="card-header-text "> Personal</h5>
                                 <button class="btn btn-small-custom pull-rights mr-2">
@@ -105,7 +105,7 @@
 
 
                          <!--Work-->
-                        <div class="card social-card share col1" style="width: 100%">
+                        <div class="card social-card share col1 tabcontent" id="Work" style="width: 100%">
                             <div class="card-header clearfix">
                                 <h5 class="card-header-text">Work</h5>
                             </div>
@@ -183,7 +183,7 @@
 
 
                      <!--Identity-->
-                    <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+                    <div class="card social-card share col1 tabcontent" id="Identity" data-social="item" style="width: 100%">
                             <div class="card-header clearfix">
                                 <h5 class="card-header-text "> Identity</h5>
                                 <button type="button" id="eye" (click)="myFunction()" class="btn btn-small-custom pull-rights ng-star-inserted">
@@ -198,8 +198,8 @@
                             <div class="row ng-star-inserted">
 
                                 <div class="col-md-4">
-                                    <label class="for-label" for="">PAN/SSN #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">PAN/SSN #</label>
+                                    <p class="for-text">CKVPB5987L</p>
                                 </div>
 
                                 <div class="col-md-8 ng-star-inserted">
@@ -208,8 +208,8 @@
                                 </div>
 
                                 <div class="col-md-4 mt-2 ng-star-inserted">
-                                    <label class="for-label" for="">Aadhar #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">Aadhar #</label>
+                                    <p class="for-text">270808381585</p>
                                 </div>
 
                                 <div class="col-md-8 mt-2 ng-star-inserted">
@@ -218,28 +218,28 @@
                                 </div>
 
                                 <div class="col-md-3 mt-2 ng-star-inserted">
-                                    <label class="for-label" for="">UAN #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">UAN #</label>
+                                    <p class="for-text">N/A</p>
                                 </div>
 
                                 <div class="col-md-3 mt-2 ng-star-inserted">
-                                    <label class="for-label" for="">PF #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">PF #</label>
+                                    <p class="for-text">N/A</p>
                                 </div>
 
                                 <div class="col-md-3 mt-2">
-                                    <label class="for-label" for="">ESI #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">ESI #</label>
+                                    <p class="for-text">N/A</p>
                                 </div>
 
                                 <div class="col-md-3 mt-2 ng-star-inserted">
-                                    <label class="for-label" for="">NSR #</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">NSR #</label>
+                                    <p class="for-text">N/A</p>
                                 </div>
 
                                 <div class="col-md-4 mt-2">
-                                    <label class="for-label" for="">Date of Birth</label>
-                                    <p class="for-text">XXXXXXXX</p>
+                                    <label class="for-label" for="password">Date of Birth</label>
+                                    <p class="for-text">Jul 24, 1997</p>
                                 </div>
 
                                 <div class="col-md-6 mt-2">
@@ -255,7 +255,7 @@
 
 
                     <!--Contact-->
-                    <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+                    <div class="card social-card share col1 tabcontent" id="Contact" data-social="item" style="width: 100%">
 
                         <div class="card-header clearfix">
                             <h5 class="card-header-text">Contact</h5>
@@ -324,9 +324,9 @@
 
 
                      <!--Banking-->
-                    <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+                    <div class="card social-card share col1 tabcontent" id="Banking" data-social="item" style="width: 100%">
                         <div class="card-description">
-                            <div class="row ng-star-inserted"></div>
+                            <div class="row"></div>
                         </div>
                         <div class="row initial-account align-items-center justify-content-center ng-star-inserted" style="height: 48vh;margin-left: 186px;width: 50%;">
                             <div class="col-md-12">
@@ -347,7 +347,7 @@
 
 
                      <!--Education-->
-                    <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+                    <div class="card social-card share col1 tabcontent" id="Education" data-social="item" style="width: 100%">
                         <div class="card-header clearfix">
                             <h5 class="card-header-text">Education</h5>
                             <button class="btn btn-small-custom pull-rights mr-2">
@@ -356,7 +356,7 @@
                         </div>
                         <div class="card-description">
                             <div class="row education">
-                                <table class="table table-hover no-border ng-star-inserted">
+                                <table class="table table-hover no-border">
                                     <thead>
                                         <tr style="color: #2c2c2c59; font-weight:200">
                                             <th>Degree</th>
@@ -367,9 +367,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="ng-star-inserted">
+                                        <tr class="">
                                             <td> Bachelors of Technology </td>
-                                            <td>  Computer Science And Engineering</td>
+                                            <td> Computer Science And Engineering</td>
                                             <td> Sri Sivani College of Engineering, Srikakulam </td>
                                             <td> 2020 </td>
                                             <td> 62.41% </td>
@@ -384,7 +384,7 @@
 
 
                 <!--Skills-->
-                <div>
+                <div class="tabcontent" id="Skills">
 
                     <div class="card social-card share  col1" data-social="item" style="width: 100%">
                         <div class="circle" data-container="body" data-toggle="tooltip" title="Label"></div>
@@ -430,7 +430,7 @@
                                 <i class="fa fa-pencil"></i>
                             </button>
                         </div>
-                        <div class="card-description ng-star-inserted">
+                        <div class="card-description">
                             <p> Dinesh Boddepalli hasn't added any certifiations yet </p>
                         </div>
                     </div>
@@ -440,10 +440,10 @@
 
 
                 <!--Social-->
-                <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+                <div class="card social-card share col1 tabcontent" id="Social" data-social="item" style="width: 100%">
                     <div class="card-header clearfix">
                         <h5 class="card-header-text">Social</h5>
-                        <button class="btn btn-small-custom pull-rights mr-2 ng-star-inserted">
+                        <button class="btn btn-small-custom pull-rights mr-2">
                             <i class="fa fa-pencil"></i>
                         </button>
                     </div>
@@ -490,15 +490,15 @@
 
 
              <!--Passport-->
-            <div class="card social-card share col1 ng-star-inserted" data-social="item" style="width: 100%">
+            <div class="card social-card share col1 tabcontent" id="Travel" data-social="item" style="width: 100%">
                            <div class="card-header clearfix"><h5 class="card-header-text">Passport</h5>
                             <button class="btn btn-small-custom pull-rights mr-2">
                            <i class="fa fa-plus"></i>
                         </button>
                     </div>
                 <div class="card-description">
-                    <div class="row ng-star-inserted">
-                        <div class="col-md-4 ng-star-inserted">
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="text-center mb-2">
                                 <div class="text-center mb-2"></div>
                                 <div class="card bank-card" style="background-color: #232527;height: 141px;width: 100%;border-radius:10px;">
@@ -516,28 +516,6 @@
                                         <div class="col-md-12 text-center">
                                             <h5 style="font-weight: 500;color:#ffffff;font-size: 19px;">U8124656 </h5></div><div class="col-md-12 text-center">
                                                 <h5 style="font-weight: 300;color:#ffffff;font-size: 12px;font-style:italic"> DINESH KUMAR BODDEPALLI </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div aria-hidden="false" bsmodal="" class="modal fade slide-up disable-scroll" role="dialog" tabindex="-1">
-                        <div class="modal-dialog modal-md" style="width:350px !important">
-                            <div class="modal-content-wrapper">
-                                <div class="modal-content">
-                                    <div class="modal-body pb-2 text-center">
-                                        <div class="row">
-                                            <h5 style="font-weight: 500;">
-                                                If you add a Passport, the current Active Passport would be set to Inactive 
-                                            </h5>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-md-12 m-t-10 sm-m-t-10 p-0">
-                                                <button class="btn btn-success mr-3" type="button">&nbsp;Proceed</button>
-                                                <button class="btn btn-danger mr-3" type="button">Cancel</button>
                                             </div>
                                         </div>
                                     </div>
@@ -722,41 +700,3 @@
 
 
 
-
-
-      <nav ngbNav #nav="ngbNav" class="nav-tabs">
-        <ng-container ngbNavItem>
-          <a ngbNavLink>One</a>
-          <ng-template ngbNavContent>
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-              keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-          </ng-template>
-        </ng-container>
-        <ng-container ngbNavItem>
-          <a ngbNavLink>Two</a>
-          <ng-template ngbNavContent>
-            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-              farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-              helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
-              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-          </ng-template>
-        </ng-container>
-        <ng-container ngbNavItem>
-          <a ngbNavLink>Three</a>
-          <ng-template ngbNavContent>
-            <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-              Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-              Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
-              egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
-              tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
-              neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
-          </ng-template>
-        </ng-container>
-      </nav>
-      
-      <div [ngbNavOutlet]="nav" class="mt-2"></div>

@@ -11,11 +11,17 @@ export class ProfileComponent implements OnInit {
 
   closeResult = '';
 
+  event:any;
+
   hide: boolean = true;
+
+
   
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+
+
   }
 
   open(content: any) {
@@ -41,8 +47,23 @@ export class ProfileComponent implements OnInit {
     this.hide = !this.hide;
   }
 
+
+
+    tabs(event : any, cityName: any) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent") as HTMLCollectionOf<HTMLElement> ;
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        const element = window.document.getElementById(cityName)!;
+        element.style.display = "block";
+        event.currentTarget.className += " active";
+    }
+
+    
+
 }
-
-
-
-

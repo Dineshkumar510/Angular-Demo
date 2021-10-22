@@ -43,7 +43,7 @@ import { EsearchComponent } from './esearch/esearch.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 enableRipple(true); 
@@ -75,6 +75,7 @@ enableRipple(true);
     RouterModule,
     MatSlideToggleModule,
     MatTabsModule, 
+    TabsModule,
     FormsModule,
     DropDownListModule,
     MatDatepickerModule,

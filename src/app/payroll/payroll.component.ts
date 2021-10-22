@@ -1,6 +1,5 @@
 import { Component, Injectable, OnInit, ViewEncapsulation, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { saveAs } from 'file-saver';
 import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -76,6 +75,7 @@ export class PayrollComponent implements OnInit {
   date: {year: number, month: number};
   downloads: any;
   url: any;
+  browser: any;
 
   constructor(
     private http: HttpClient,
@@ -110,14 +110,12 @@ export class PayrollComponent implements OnInit {
 
   //download
   download(): void {
-   return this.downloads
-    .download('https://i.pinimg.com/736x/5b/5e/0f/5b5e0f5704e4715a76a50e096722fa8d.jpg')
-    .subscribe((blob: string | Blob) =>{
-      saveAs(blob, 'file')
-    })
+   const Download = this.browser.downloads.download({url: "http://www.africau.edu/images/default/sample.pdf"});
+   return Download;
   }
 
-  open(content: any) {
+  
+  open(content: any): void {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
