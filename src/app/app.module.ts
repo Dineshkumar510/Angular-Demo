@@ -44,7 +44,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-
+import { DownloadService } from './services/download.service';
 
 enableRipple(true); 
 
@@ -65,6 +65,7 @@ enableRipple(true);
     EsearchComponent,
     DashboardComponent,
     ProfileComponent,
+    
     
   ],
   imports: [
@@ -96,7 +97,9 @@ enableRipple(true);
     BsDropdownModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
   ],
-  providers: [],
+  providers: [
+    DownloadService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -93,11 +93,9 @@
                                         <td class="month">sept</td>
                                         <td class="company"> Miracle Software Systems(India), Pvt. Ltd </td>
                                         <td>
-                                          <a href="http://www.africau.edu/images/default/sample.pdf" target="_blank">
-                                            <i class="fa fa-eye" style="color: #00aae7"></i>
-                                          </a>
+                                            <i class="fa fa-eye" (click) = "openModalS(payslips)" style="color: #00aae7"></i>
                                         </td>
-                                        <td><i class="fa fa-download" (click)='download()' style="color: #00aae7; font-size: 17px"></i></td>
+                                        <td><i class="fa fa-download" (click)='Download()' style="color: #00aae7; font-size: 17px"></i></td>
                                       </tr>
 
                                       <tr>
@@ -105,12 +103,10 @@
                                         <td class="month">Oct</td>
                                         <td class="company"> Miracle Software Systems(India), Pvt. Ltd </td>
                                         <td>
-                                          <a href="http://www.africau.edu/images/default/sample.pdf" target="_blank">
-                                            <i class="fa fa-eye" style="color: #00aae7"></i>
-                                          </a>
+                                            <i class="fa fa-eye" (click)="openModals(payslip)" style="color: #00aae7"></i>
                                         </td>
                                         <td>
-                                          <i class="fa fa-download" (click)='download()' style="color: #00aae7; font-size: 17px"></i>
+                                            <i class="fa fa-download" (click)='Download()' style="color: #00aae7; font-size: 17px"></i>
                                         </td>
                                       </tr>
                                      
@@ -772,6 +768,50 @@
           </div>
 
         </ng-template>
+
+
+        <ng-template #payslips style="margin-top: 100px;">
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">Payslip - {{payslipMonths}} 2021</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="width: 500px; height: 500px">
+            <div>
+              <iframe
+                  src="/assets/pdf/sample.pdf"
+                  frameBorder="0"
+                  scrolling="auto"
+                  height="450px"
+                  width="450px">
+              </iframe>
+            </div>
+          </div>
+        </ng-template>
+
+
+        <ng-template #payslip style="margin-top: 100px;">
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">Payslip - {{payslipMonth}} 2021</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="width: 500px; height: 500px">
+            <div>
+              <iframe
+                  src="/assets/pdf/sample.pdf"
+                  frameBorder="0"
+                  scrolling="auto"
+                  height="450px"
+                  width="450px">
+              </iframe>
+            </div>
+          </div>
+        </ng-template>
+
+
 
 
         <ng-http-loader></ng-http-loader>

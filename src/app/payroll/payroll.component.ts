@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import {NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
+import { DownloadService } from '../services/download.service';
+import * as FileSaver from 'file-saver';
 
 @Injectable()
 export class CustomAdapter extends NgbDateAdapter<string> {
@@ -76,6 +77,8 @@ export class PayrollComponent implements OnInit {
   downloads: any;
   url: any;
   browser: any;
+  payslipMonths: any = 'September';
+  payslipMonth: any = 'october';
 
   constructor(
     private http: HttpClient,
@@ -83,6 +86,7 @@ export class PayrollComponent implements OnInit {
     private dateAdapter: NgbDateAdapter<string>,
     private modalService: NgbModal,
     private modalServices: BsModalService,
+    private downloadService: DownloadService
     ) { }
 
   public model2: string;
@@ -109,9 +113,24 @@ export class PayrollComponent implements OnInit {
   }
 
   //download
-  download(): void {
-   const Download = this.browser.downloads.download({url: "http://www.africau.edu/images/default/sample.pdf"});
-   return Download;
+  // download(): void {
+  //  const Download = this.browser.downloads.download({url: "http://www.africau.edu/images/default/sample.pdf"});
+  //  return Download;
+  // }
+
+  returnBlob(res: BlobPart): Blob {
+    console.log('PaySlip Downloaded!');
+    return new Blob([res], {type: 'file/pdf'})
+  }
+
+
+  Download(): void {
+    this.downloadService.downloadFile()
+    .subscribe( res => {
+      if(res) {
+        FileSaver.saveAs(this.returnBlob(res))
+      }
+    })
   }
 
   
@@ -136,6 +155,14 @@ export class PayrollComponent implements OnInit {
   
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalServices.show(template);
+  }
+
+  openModals(payslip: TemplateRef<any>) {
+    this.modalRef = this.modalServices.show(payslip);
+  }
+
+  openModalS(payslips: TemplateRef<any>) {
+    this.modalRef = this.modalServices.show(payslips);
   }
 
   toggleshow(): void{
